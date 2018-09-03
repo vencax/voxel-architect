@@ -124,7 +124,7 @@ function defaultSetup (game, avatar) {
       game.createBlock(position, currentMaterial)
     } else {
       position = blockPosErase
-      if (position) game.setBlock(position, 0)
+      if (position && position[1] > 1) game.setBlock(position, 0)
     }
   })
 
