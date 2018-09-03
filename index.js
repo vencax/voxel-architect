@@ -79,7 +79,12 @@ function defaultSetup (game, avatar) {
 
   // highlight blocks when you look at them, hold <Ctrl> for block placement
   var blockPosPlace, blockPosErase
-  var hl = game.highlighter = highlight(game, {color: 0xff0000})
+  var hl = game.highlighter = highlight(game, {
+    adjacentActive: function () {
+      return !game.controls.state.alt
+    },
+    color: 0xff0000
+  })
   hl.on('highlight', function (voxelPos) { blockPosErase = voxelPos })
   hl.on('remove', function (voxelPos) { blockPosErase = null })
   hl.on('highlight-adjacent', function (voxelPos) { blockPosPlace = voxelPos })
