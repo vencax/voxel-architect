@@ -9,7 +9,7 @@ var Hasher = require('./hasher')
 
 var voxels = {}
 
-var materials = ['#00ff00', '#000000', '#6c5353', '#ff0000', '#dddddd']
+var materials = ['#008000', '#b3b3b3', '#eeeaea', '#ff0000', '#3b7663', '#fd572a']
 
 var params = (new URL(document.location)).searchParams
 
@@ -107,10 +107,16 @@ function defaultSetup (game, avatar) {
     if (ev.keyCode === '4'.charCodeAt(0)) {
       currentMaterial = 4
     }
+    if (ev.keyCode === '5'.charCodeAt(0)) {
+      currentMaterial = 5
+    }
+    if (ev.keyCode === '6'.charCodeAt(0)) {
+      currentMaterial = 6
+    }
   })
 
   // block interaction stuff, uses highlight data
-  var currentMaterial = 1
+  var currentMaterial = 2
 
   game.on('fire', function (target, state) {
     var position = blockPosPlace
