@@ -9,7 +9,17 @@ var Hasher = require('./hasher')
 
 var voxels = {}
 
-var materials = ['#008000', '#b3b3b3', '#eeeaea', '#ff0000', '#3b7663', '#fd572a']
+var materials = [
+  '#008000', // grass
+  '#eaeaea', // light gray
+  '#afafaf',  // medium gray
+  '#808080', // dark gray
+  '#01a3ff', // blue for windonws
+  '#d40000',  // red
+  '#3b7663',  // dark green
+  '#fd572a',  // orange
+  '#f2ca02'  // yellow
+]
 
 var params = (new URL(document.location)).searchParams
 
@@ -112,6 +122,15 @@ function defaultSetup (game, avatar) {
     }
     if (ev.keyCode === '6'.charCodeAt(0)) {
       currentMaterial = 6
+    }
+    if (ev.keyCode === '7'.charCodeAt(0)) {
+      currentMaterial = 7
+    }
+    if (ev.keyCode === '8'.charCodeAt(0)) {
+      currentMaterial = 8
+    }
+    if (ev.keyCode === '9'.charCodeAt(0)) {
+      currentMaterial = 9
     }
   })
 
